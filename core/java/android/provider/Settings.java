@@ -6384,6 +6384,13 @@ public final class Settings {
          */
         public static final String GESTURE_DOUBLE_TAP_SLEEP = "gesture_double_tap_sleep";
 
+         /**
+         * Whether to scramble a pin unlock layout
+         * 0 = 0ff, 1 = on
+         * @hide
+         */
+        public static final String LOCKSCREEN_PIN_SCRAMBLE_LAYOUT = "lockscreen_scramble_pin_layout";
+
         /**
          * Whether allowing pocket service to register sensors and dispatch informations.
          *   0 = disabled
