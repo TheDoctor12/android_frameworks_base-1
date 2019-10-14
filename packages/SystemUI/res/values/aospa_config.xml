@@ -34,4 +34,7 @@
     <!-- Udfps vendor code -->
     <integer name="config_udfps_vendor_code">0</integer>
 
+    <!-- Max visible system icons -->
+    <integer name="config_maxVisibleStatusIconContainer">7</integer>
+
 </resources>
