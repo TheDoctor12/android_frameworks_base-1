@@ -112,6 +112,7 @@ public class UiModeNightTile extends QSTileImpl<QSTile.BooleanState> implements
         boolean newState = !mState.value;
         mUiModeManager.setNightModeActivated(newState);
         refreshState(newState);
+        mHost.collapsePanels();
     }
 
     @Override
