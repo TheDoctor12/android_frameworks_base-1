@@ -5711,12 +5711,6 @@ public final class Settings {
         */
        public static final String GESTURE_TWO_FINGER_SWIPE = "gesture_two_finger_swipe";
 
-       /**
-         * Whether or not volume button music controls should be enabled to seek media tracks
-         * @hide
-         */
-        public static final String VOLBTN_MUSIC_CONTROLS = "volbtn_music_controls";
-
         /**
          * Whether the torch launch gesture when the screen is off should be enabled.
          * @hide
