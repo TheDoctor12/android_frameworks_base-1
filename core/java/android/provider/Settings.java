@@ -5840,7 +5840,7 @@ public final class Settings {
          *     <li> 1 = On
          * </ul>
          * @hide
-         */
+        */
         public static final String CAMERA_FLASH_NOTIFICATION = "camera_flash_notification";
 
         /**
@@ -6073,6 +6073,12 @@ public final class Settings {
          * @hide
          */
         public static final String LOCKSCREEN_PIN_SCRAMBLE_LAYOUT = "lockscreen_scramble_pin_layout";
+
+        /**
+         * Whether to show advanced reboot options in power menu
+         * @hide
+         */
+        public static final String ADVANCED_REBOOT = "advanced_reboot";
 
         /**
          * Keys we no longer back up under the current schema, but want to continue to
