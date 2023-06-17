@@ -61,12 +61,23 @@ public class PropImitationHooks {
     private static final String PACKAGE_GPHOTOS = "com.google.android.apps.photos";
     private static final String PACKAGE_NETFLIX = "com.netflix.mediaclient";
     private static final String PACKAGE_VELVET = "com.google.android.googlequicksearchbox";
+    private static final String PACKAGE_WALLPAPER_EMOJI = "com.google.android.apps.emojiwallpaper";
+    private static final String PACKAGE_WALLPAPER_EFFECT = "com.google.android.wallpaper.effects";
 
     private static final String PROCESS_GMS_PERSISTENT = PACKAGE_GMS + ".persistent";
     private static final String PROCESS_GMS_UNSTABLE = PACKAGE_GMS + ".unstable";
 
     private static final ComponentName GMS_ADD_ACCOUNT_ACTIVITY = ComponentName.unflattenFromString(
             "com.google.android.gms/.auth.uiflows.minutemaid.MinuteMaidActivity");
+
+    private static final Map<String, Object> sPixel7Props = Map.of(
+        "BRAND", "google",
+        "MANUFACTURER", "Google",
+        "DEVICE", "cheetah",
+        "PRODUCT", "cheetah",
+        "MODEL", "Pixel 7 Pro",
+        "FINGERPRINT", "google/cheetah/cheetah:13/TQ3A.230605.012/10204971:user/release-keys"
+    );
 
     private static final Map<String, Object> sPixelProps = Map.of(
         "BRAND", "google",
@@ -119,6 +130,7 @@ public class PropImitationHooks {
          * Set Pixel 5 for Google, ASI and GMS device configurator
          * Set Pixel XL for Google Photos
          * Set custom model for Netflix
+         * Set Pixel 7 Pro for WallpaperEmoji and WallpaperEffect
          */
         if (sIsGms) {
             setCertifiedPropsForGms();
@@ -137,6 +149,10 @@ public class PropImitationHooks {
         } else if (!sNetflixModel.isEmpty() && packageName.equals(PACKAGE_NETFLIX)) {
             dlog("Setting model to " + sNetflixModel + " for Netflix");
             setPropValue("MODEL", sNetflixModel);
+        } else if (sSpoofGapps && (packageName.equals(PACKAGE_WALLPAPER_EMOJI)
+                || packageName.equals(PACKAGE_WALLPAPER_EFFECT))) {
+            dlog("Spoofing Pixel 7 Pro for: " + packageName + " process: " + processName);
+            sPixel7Props.forEach(PropImitationHooks::setPropValue);
         }
     }
 
