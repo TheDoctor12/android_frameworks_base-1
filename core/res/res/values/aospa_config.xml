@@ -128,6 +128,9 @@
          unlock pixel-exclusive features -->
     <bool name="config_spoofGoogleApps">true</bool>
 
+    <!-- Whether to spoof GMS as Pixel Tablet -->
+    <bool name="config_spoofasTablet">false</bool>
+
     <!-- Display color inversion availability -->
     <bool name="config_displayInversionAvailable">true</bool>
 
